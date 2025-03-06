@@ -1,5 +1,6 @@
 import Button from "./button"
 import "./footer.css"
+import Number_input from "./number_input";
 import Selector from "./selector";
 
 const Footer = () => {
@@ -7,7 +8,7 @@ const Footer = () => {
         <>
             <div className="esc_button_container">
                 <Button />
-                <Selector />
+                <Number_input />
                 <Button />
             </div>
         </>

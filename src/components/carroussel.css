@@ -1,12 +1,12 @@
 .esc_carroussel {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    margin-bottom: 5%;
 }
 
 .esc_carroussel_container {
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 35%;
+    justify-content: space-around;
 }
