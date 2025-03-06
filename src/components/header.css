@@ -1,0 +1,9 @@
+.esc_title {
+    font-size: 20px;
+}
+
+.esc_description {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}

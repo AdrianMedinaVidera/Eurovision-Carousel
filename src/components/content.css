@@ -1,0 +1,7 @@
+.esc_selectors {
+    padding: 2%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 80%;
+}

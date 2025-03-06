@@ -1,0 +1,6 @@
+.esc_button_container {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    gap: 40%;
+}

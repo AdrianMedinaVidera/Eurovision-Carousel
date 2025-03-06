@@ -1,0 +1,7 @@
+.esc_card_container {
+    border: 4px solid rgb(149, 149, 149);
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: black;
+    padding: 200%;
+}
