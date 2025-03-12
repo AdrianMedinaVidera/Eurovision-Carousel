@@ -1,14 +1,119 @@
 .esc_title {
-    font-size: 20px;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin: 30px;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
 }
 
 .esc_description {
     display: flex;
     flex-direction: row;
     gap: 50px;
-    margin-bottom: 5%;
+    margin: 2rem auto 4rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+#description {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    letter-spacing: 1.2px;
+    border-bottom: #00ff9d 4px solid;
+    border-radius: 20px;
 }
 
 #image {
-    border-radius: 40px;
+    max-width: 100%;
+    max-height: 560px;
+    object-fit: contain;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.image_container:hover {
+    transform: scale(1.02);
+}
+
+.image_container {
+    transition: transform 0.3s ease;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    flex: 0 0 auto;
+}
+
+.image_wrapper {
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+#esc_description_list {
+    border-left: 4px solid #00ff9d;
+    padding-left: 50px;
+    margin-bottom: 8px;
+    color: #f0f0f0;
+    font-size: 1.3rem;
+}
+
+#esc_description_list h2 {
+    font-size: 2.5rem;  /* Increased from 2rem */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    letter-spacing: 1.2px;
+}
+
+#esc_description_list h3 {
+    font-size: 1.6rem;  /* Increased from 1.3rem */
+    font-weight: 600;
+    color: #00ff9d;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+#esc_description_list p {
+    font-size: 1.3rem;  /* Added explicit font size, increased from 1.1rem */
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+#esc_description_list strong {
+    color: #00ff9d;
+    font-weight: 600;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.inline-block {
+    display: inline-block;
+    vertical-align: middle;
 }
