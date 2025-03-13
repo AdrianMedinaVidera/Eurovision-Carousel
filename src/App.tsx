@@ -40,7 +40,7 @@ function App() {
     <> {contestants ?
       <>
         <Header year={contestants.year} arena={contestants.arena} city={contestants.city} slogan={contestants.slogan} logoUrl={contestants.logoUrl} voting={contestants.voting} presenters={contestants.presenters} country={{iso:contestants.country, countryName: contestants.countryName}} />
-        <Content contestants={contestants.contestants} setSelectedYear={setSelectedYear} selectedYear={selectedYear} countriesName={countriesName} rounds={contestants.rounds}/>
+        <Content contestants={contestants.contestants} setSelectedYear={setSelectedYear} selectedYear={selectedYear} countryName={countriesName} rounds={contestants.rounds}/>
         <Footer />
       </> 
     :

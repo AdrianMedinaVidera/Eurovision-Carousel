@@ -24,7 +24,7 @@ const MyCarousel = ({contestants, rounds}: CarrousselProps) => {
                     const roundInfo = getRoundInfo(rounds, contestant.id);
                     const contestantWithPoints = { ...contestant, points: roundInfo.totalPoints, roundName: roundInfo.roundName, isDisqualified: roundInfo.isDisqualified};
                     return (
-                    <CarouselItem key={contestant.id} className="basis-1/3 flex justify-center"><Song_card contestant={contestantWithPoints} /></CarouselItem>
+                    <CarouselItem key={contestant.id} className="basis-1/2 flex justify-center"><Song_card contestant={contestantWithPoints} /></CarouselItem>
                 )})}
             </CarouselContent>
         <CarouselPrevious />

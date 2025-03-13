@@ -24,7 +24,7 @@ type ContentProps = {
     rounds: any[];
 }
 
-const Content = ({contestants, setSelectedYear, selectedYear, rounds}: ContentProps) => {
+const   Content = ({contestants, setSelectedYear, selectedYear, rounds}: ContentProps) => {
     const [selectedCountry, setSelectedCountry] = useState<string>("ES");
 
     useEffect(() => {
