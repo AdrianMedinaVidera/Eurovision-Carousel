@@ -5,6 +5,8 @@ Dentro de la ronda específica, hay que acceder a performances, que es un array 
 Dentro del array de performance, hay que acceder al índice que representa a la posición del país - 1 (id).
 Ahora accedemos a scores, a 0 y luego a points. (total de puntos)
 */
+import { useState, useEffect } from 'react';
+
 
 export const getRoundInfo = (rounds: any[], contestantId: number) => {
     if (!rounds || rounds?.length === 0) {
@@ -23,3 +25,24 @@ export const getRoundInfo = (rounds: any[], contestantId: number) => {
     const isDisqualified = round.disqualifieds ? round.disqualifieds.some((disq) => disq === contestantId)  : false;
     return {totalPoints, roundName: round?.name, isDisqualified};
 }
+
+export function useWindowSize() {
+    const [windowSize, setWindowSize] = useState({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  
+    useEffect(() => {
+      function handleResize() {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+  
+    return windowSize;
+  }

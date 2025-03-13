@@ -8,7 +8,7 @@ import {
     CarouselNext,
     CarouselPrevious,
   } from "../components/ui/carousel"
-import { getRoundInfo } from '../api/helpers';
+import { getRoundInfo, useWindowSize } from '../api/helpers';
   
 
 type CarrousselProps = {
@@ -17,6 +17,8 @@ type CarrousselProps = {
 }
 
 const MyCarousel = ({contestants, rounds}: CarrousselProps) => {
+    const { width } = useWindowSize();
+
     return (
         <Carousel className='w-full '>
             <CarouselContent>
@@ -24,7 +26,10 @@ const MyCarousel = ({contestants, rounds}: CarrousselProps) => {
                     const roundInfo = getRoundInfo(rounds, contestant.id);
                     const contestantWithPoints = { ...contestant, points: roundInfo.totalPoints, roundName: roundInfo.roundName, isDisqualified: roundInfo.isDisqualified};
                     return (
-                    <CarouselItem key={contestant.id} className="basis-1/2 flex justify-center"><Song_card contestant={contestantWithPoints} /></CarouselItem>
+                    //Compruebo el ancho de la pantalla para establecer un tipo de carrusel u otro. 
+                    <CarouselItem key={contestant.id} className={`flex justify-center ${width > 1000 ? width > 2000 ? 'basis-1/3': 'basis-1/2' : ''}`} >
+                        <Song_card contestant={contestantWithPoints} />
+                    </CarouselItem>
                 )})}
             </CarouselContent>
         <CarouselPrevious />
