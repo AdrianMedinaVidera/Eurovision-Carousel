@@ -26,22 +26,21 @@ export const getRoundInfo = (rounds: any[], contestantId: number) => {
     return {totalPoints, roundName: round?.name, isDisqualified};
 }
 
-export const getPointsInfo = (rounds: any[], contestantId: number) => {
-  if (!rounds || rounds?.length === 0) {
-    return null;
+export const getPointsInfo = (rounds, contestantId) => {
+  for (const round of rounds) {
+    const performance = round.performances.find(p => p.contestantId === contestantId);
+    if (performance) {
+      const isFinal = round.name.toLowerCase() === 'final';
+      return {
+        roundName: round.name,
+        juryPoints: isFinal ? performance.scores.find(s => s.name === "jury")?.points || 0 : undefined,
+        publicPoints: isFinal ? performance.scores.find(s => s.name === "public")?.points || 0 : undefined,
+        totalPoints: performance.scores.find(s => s.name === "total")?.points || 0
+      };
+    }
   }
-  let performanceIndex = 0;
-  const round = rounds?.find((ronda) => {
-      const roundSearched = ronda.performances.findIndex((performance) => performance.contestantId === contestantId)
-      if (roundSearched !== -1) {
-          performanceIndex = roundSearched;
-          return true;
-      }
-      return false;
-  });
-  const totalPoints = round?.performances[performanceIndex]?.scores[0]?.points;
-  return {totalPoints, roundName: round?.name, performance: round?.performances[performanceIndex]};
-}
+  return null;
+};
 
 export function useWindowSize() {
     const [windowSize, setWindowSize] = useState({

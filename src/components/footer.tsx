@@ -6,7 +6,6 @@ const Footer = () => {
     return (
         <>
             <div className="esc_button_container">
-                <Number_input />
             </div>
         </>
     )

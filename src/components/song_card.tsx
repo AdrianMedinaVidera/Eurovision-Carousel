@@ -1,20 +1,23 @@
 import { Contestant } from './content';
+import { getPointsInfo } from '../api/helpers';
 import {
     HoverCard,
     HoverCardContent,
     HoverCardTrigger,
-  } from "../components/ui/hover-card"
-  
+} from "../components/ui/hover-card"
+
 
 type Song_cardProps = {
     contestant: Contestant;
+    rounds: any[];  // Add rounds to props
 }
 
 function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-const Song_card = ({contestant}: Song_cardProps) => {
+const Song_card = ({contestant, rounds}: Song_cardProps) => {
+    const pointsInfo = getPointsInfo(rounds, contestant.id);
+    
     return (
         <div className="bg-white rounded-lg shadow-lg w-96 transition-transform hover:scale-105">
             <div className="w-full h-56 overflow-hidden">
@@ -25,6 +28,15 @@ const Song_card = ({contestant}: Song_cardProps) => {
                 />
             </div>
             <div className="p-8 relative">
+                {contestant.isDisqualified ? (
+                    <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md font-bold">
+                        DQ
+                    </div>
+                ) : contestant.roundName !== "final" && (
+                    <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-md font-bold">
+                        NQ
+                    </div>
+                )}
                 <div className="space-y-4">
                     <h3 className="text-3xl font-bold text-gray-800 truncate">
                         {contestant.song}
@@ -39,23 +51,27 @@ const Song_card = ({contestant}: Song_cardProps) => {
                         <HoverCard openDelay={400}>
                             <HoverCardTrigger asChild>
                                 <span className='hover:underline'>
-                                    {contestant.points} points ({contestant.roundName}) {contestant.isDisqualified ? " (DQ)" : ""}
+                                    {contestant.points} points ({contestant.roundName})
                                 </span>
                             </HoverCardTrigger>
                             <HoverCardContent side="top" align="center" className='bg-gray-500'>
                                 <p>
-                                    Total Poinsts: {contestant.points} points
+                                    Total Points: {pointsInfo.totalPoints} points
                                 </p>
                                 <p>
-                                    {capitalizeFirstLetter(contestant.roundName)}
+                                    {capitalizeFirstLetter(pointsInfo.roundName)}
                                 </p>
-                                {contestant.isDisqualified? <p>Disqualified</p> : ""}
-                                <p>
-                                    Jury Points: 100
-                                </p>
-                                <p>
-                                    Public Points: 100
-                                </p>
+                                {contestant.isDisqualified && <p>Disqualified</p>}
+                                {pointsInfo.roundName.toLowerCase() === "final" && (
+                                    <>
+                                        {pointsInfo.juryPoints > 0 && (
+                                            <p>Jury Points: {pointsInfo.juryPoints} points</p>
+                                        )}
+                                        {pointsInfo.publicPoints > 0 && (
+                                            <p>Public Points: {pointsInfo.publicPoints} points</p>
+                                        )}
+                                    </>
+                                )}
                             </HoverCardContent>
                         </HoverCard>
                     </p>

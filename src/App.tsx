@@ -6,16 +6,18 @@ import Header from './components/header'
 import Content from './components/content'
 import Footer from './components/footer'
 import { obtenerDatosEdicion, obtenerPaises } from './api/api'
+import { useParams } from "react-router";
 
 function App() {
-
-  const [selectedYear, setSelectedYear] = useState(2024);
+  const params = useParams();
   const [countriesName, setCountries] = useState(null);
   const [contestants, setContestants] = useState(null);
 
+  console.log(params?.year);
+  
   useEffect(() => {
     if (countriesName) {
-      obtenerDatosEdicion(selectedYear).then((data) => {
+      obtenerDatosEdicion(Number(params?.year) ?? 2024).then((data) => {
         const dataWithCountry = {
           ...data,
           countryName: countriesName[data.country],
@@ -29,7 +31,7 @@ function App() {
         setContestants(dataWithCountry)
       });
     }
-  }, [selectedYear, countriesName]); 
+  }, [params?.year, countriesName]); 
   
   useEffect(() => {
     obtenerPaises().then((countriesFromApi) => setCountries(countriesFromApi));
@@ -40,7 +42,7 @@ function App() {
     <> {contestants ?
       <>
         <Header year={contestants.year} arena={contestants.arena} city={contestants.city} slogan={contestants.slogan} logoUrl={contestants.logoUrl} voting={contestants.voting} presenters={contestants.presenters} country={{iso:contestants.country, countryName: contestants.countryName}} />
-        <Content contestants={contestants.contestants} setSelectedYear={setSelectedYear} selectedYear={selectedYear} countryName={countriesName} rounds={contestants.rounds}/>
+        <Content contestants={contestants.contestants} selectedYear={Number(params?.year)} countryName={countriesName} rounds={contestants.rounds}/>
         <Footer />
       </> 
     :

@@ -18,13 +18,12 @@ export type Contestant = {
 
 type ContentProps = {
     contestants: Contestant[],
-    setSelectedYear: (year: number) => void,
     selectedYear: number,
     countryName: Record<string, string>,
     rounds: any[];
 }
 
-const   Content = ({contestants, setSelectedYear, selectedYear, rounds}: ContentProps) => {
+const   Content = ({contestants, selectedYear, rounds}: ContentProps) => {
     const [selectedCountry, setSelectedCountry] = useState<string>("ES");
 
     useEffect(() => {
@@ -36,10 +35,9 @@ const   Content = ({contestants, setSelectedYear, selectedYear, rounds}: Content
     return (
         <>
         <div className='esc_selectors'>
-            <Selector selectorType='year' setYear={setSelectedYear} selectedYear={selectedYear}/>
+            <Selector selectorType='year' selectedYear={selectedYear}/>
             <Selector 
                 selectorType="country" 
-                setYear={setSelectedYear} 
                 selectedYear={selectedYear} 
                 setCountry={setSelectedCountry} 
                 selectedCountry={selectedCountry} 

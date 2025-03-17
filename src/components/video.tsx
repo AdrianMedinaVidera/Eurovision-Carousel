@@ -19,7 +19,7 @@ const Video = ({ year, id }: VideoProps) => {
 
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-bold bg-[#003399] text-white p-3 mb-4">VIDEO</h3>
+      <h3 className="text-xl font-bold bg-[#003399] text-white p-3 mb-6">VIDEO</h3>
       <div className="aspect-video w-full bg-black rounded-lg">
         {videoData && videoData.videoUrls && videoData.videoUrls.length > 0 && (
           <iframe

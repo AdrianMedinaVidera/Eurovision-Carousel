@@ -1,18 +1,19 @@
 import { obtenerAños, obtenerPaises } from '../api/api';
 import './selector.css'
 import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router";
 
 type SelectorProps = {
     selectorType: 'country' | 'year'
-    setYear: (year: number) => void;
     selectedYear: number;
     setCountry?: (country: string) => void;
     selectedCountry?: string;
 }
 
-const Selector = ({selectorType, setYear, selectedYear, setCountry, selectedCountry}: SelectorProps) => {
+const Selector = ({selectorType, selectedYear, setCountry, selectedCountry}: SelectorProps) => {
     const [years, setYears] = useState([]);
     const [countries, setCountries] = useState<string[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => { 
         obtenerAños().then((data) => setYears(data));
@@ -36,7 +37,7 @@ const Selector = ({selectorType, setYear, selectedYear, setCountry, selectedCoun
                 )
             ) : (
                 years.length > 0 && (
-                    <select id="year" name="year" value={selectedYear} onChange={(e) => setYear(Number(e.target.value))}>
+                    <select id="year" name="year" value={selectedYear} onChange={(e) => navigate(`/${Number(e.target.value)}`)}>
                         {years.map((year) => (
                             <option key={year} value={year}>{year}</option>
                         ))}

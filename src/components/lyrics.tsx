@@ -18,13 +18,17 @@ const Lyrics = ({ year, id }: LyricsProps) => {
   }, [year, id]);
 
   return (
-    <div>
-      <h3 className="text-xl font-bold bg-[#003399] text-white p-3 mb-4">LYRICS</h3>
-      <div className="whitespace-pre-line">
-        <h4 className="font-bold mb-4 pl-5 pt-1">{lyricsData?.lyrics?.[0]?.title || 'Loading...'}</h4>
-        <p className="p-5 pt-0">
-          {lyricsData?.lyrics?.[0]?.content || 'No lyrics available'}
-        </p>
+    <div className="bg-[#242424] text-white rounded-lg border-2 border-[#003399]">
+      <h3 className="text-xl font-bold bg-[#003399] text-white p-3 mb-4 rounded-t-lg">LYRICS</h3>
+        <div className="whitespace-pre-line">
+        <h4 className="font-bold mb-4 pl-5 pt-1 text-2xl underline underline-offset-4">
+          {lyricsData?.lyrics?.[0]?.title || 'Loading...'}
+        </h4>
+        <div className="p-5 pt-0">
+          <p className="text-lg pl-2 whitespace-pre-wrap">
+            {lyricsData?.lyrics?.[0]?.content || 'No lyrics available'}
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -21,12 +21,11 @@ const Title = ({ year, id }: TitleProps) => {
 
   return (
     <>
-    <Link to={"/"}><div><h2>ATRAS</h2></div></Link>
-    <div className="text-center mb-8">
+    <div className="text-center mb-8 pb-[20px]">
       <h1 className="text-4xl font-bold mb-2">
         Eurovision {year} - {contestantData?.country ? (contestantData.country) : ''}
       </h1>
-      <h2 className="text-3xl mb-6">
+      <h2 className="text-3xl">
         {contestantData?.artist} - "{contestantData?.song}"
       </h2>
     </div>
