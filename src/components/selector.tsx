@@ -38,7 +38,7 @@ const Selector = ({selectorType, selectedYear, setCountry, selectedCountry}: Sel
             ) : (
                 years.length > 0 && (
                     <select id="year" name="year" value={selectedYear} onChange={(e) => navigate(`/${Number(e.target.value)}`)}>
-                        {years.map((year) => (
+                        {years.filter(year => year !== 2020).map((year) => (
                             <option key={year} value={year}>{year}</option>
                         ))}
                     </select>
