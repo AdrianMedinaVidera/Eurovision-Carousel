@@ -37,5 +37,18 @@ export const obtenerPaises = async () => {
     }
 }
 
+export const obtenerDatosConcursante = async (year: number, id: number) => {
+    try {
+        const response = await fetch(`https://eurovisionapi.runasp.net/api/contests/${year}/contestants/${id}`, {method: "GET"});
+        if (response.ok) {
+            const datos = await response.json();
+            return datos;
+        }
+    }
+    catch {
+        console.log("Error!!");
+    }
+}
+
 
 

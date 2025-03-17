@@ -26,6 +26,23 @@ export const getRoundInfo = (rounds: any[], contestantId: number) => {
     return {totalPoints, roundName: round?.name, isDisqualified};
 }
 
+export const getPointsInfo = (rounds: any[], contestantId: number) => {
+  if (!rounds || rounds?.length === 0) {
+    return null;
+  }
+  let performanceIndex = 0;
+  const round = rounds?.find((ronda) => {
+      const roundSearched = ronda.performances.findIndex((performance) => performance.contestantId === contestantId)
+      if (roundSearched !== -1) {
+          performanceIndex = roundSearched;
+          return true;
+      }
+      return false;
+  });
+  const totalPoints = round?.performances[performanceIndex]?.scores[0]?.points;
+  return {totalPoints, roundName: round?.name, performance: round?.performances[performanceIndex]};
+}
+
 export function useWindowSize() {
     const [windowSize, setWindowSize] = useState({
       width: window.innerWidth,

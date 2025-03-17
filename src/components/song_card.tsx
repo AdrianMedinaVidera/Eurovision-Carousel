@@ -13,6 +13,7 @@ type Song_cardProps = {
 function capitalizeFirstLetter(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
 const Song_card = ({contestant}: Song_cardProps) => {
     return (
         <div className="bg-white rounded-lg shadow-lg w-96 transition-transform hover:scale-105">

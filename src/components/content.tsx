@@ -46,7 +46,7 @@ const   Content = ({contestants, setSelectedYear, selectedYear, rounds}: Content
             />
         </div>
         <div className='carousel_container'>
-            <MyCarousel contestants={contestants} rounds={rounds}/>
+            <MyCarousel contestants={contestants} rounds={rounds} selectedYear={selectedYear}/>
         </div>
         </>
     )
