@@ -34,14 +34,8 @@ const   Content = ({contestants, selectedYear, rounds}: ContentProps) => {
 
     return (
         <>
-        <div className='esc_selectors'>
+        <div className='esc_selectors flex justify-end'>
             <Selector selectorType='year' selectedYear={selectedYear}/>
-            <Selector 
-                selectorType="country" 
-                selectedYear={selectedYear} 
-                setCountry={setSelectedCountry} 
-                selectedCountry={selectedCountry} 
-            />
         </div>
         <div className='carousel_container'>
             <MyCarousel contestants={contestants} rounds={rounds} selectedYear={selectedYear}/>

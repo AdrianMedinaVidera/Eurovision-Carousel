@@ -1,7 +1,5 @@
 .esc_selectors {
-    width: 100%;
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    margin-bottom: 3%;
+    justify-content: flex-end;
+    padding-bottom: 30px;
 }
