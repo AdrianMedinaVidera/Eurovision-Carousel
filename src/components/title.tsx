@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { obtenerDatosConcursante } from '../api/api';
-import { obtenerPaises } from '../api/api';
+import { obtenerDatosConcursante } from '../api/api.js';
+import { obtenerPaises } from '../api/api.js';
 import { Link } from "react-router";
 
 type TitleProps = {

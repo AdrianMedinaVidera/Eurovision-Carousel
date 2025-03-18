@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { obtenerDatosConcursante, obtenerDatosEdicion } from '../api/api';
-import { getPointsInfo } from '../api/helpers';
+import { obtenerDatosConcursante, obtenerDatosEdicion } from '../api/api.js';
+import { getPointsInfo } from '../api/helpers.js';
 
 type InfoProps = {
   year: number;

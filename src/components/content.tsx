@@ -1,7 +1,7 @@
-import Selector from './selector'
+import Selector from './selector.js'
 import './content.css';
-import Carrousel from './carousel';
-import MyCarousel from './carousel';
+import Carrousel from './carousel.js';
+import MyCarousel from './carousel.js';
 import { useState, useEffect } from 'react';
 
 export type Contestant = {

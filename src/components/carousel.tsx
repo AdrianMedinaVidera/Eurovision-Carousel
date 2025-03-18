@@ -1,6 +1,6 @@
 import './carousel.css';
-import Song_card from './song_card';
-import { Contestant } from './content';
+import Song_card from './song_card.js';
+import { Contestant } from './content.js';
 import {
     Carousel,
     CarouselContent,
@@ -8,11 +8,11 @@ import {
     CarouselNext,
     CarouselApi,
     CarouselPrevious,
-  } from "../components/ui/carousel"
-import { getRoundInfo, useWindowSize } from '../api/helpers';
+  } from "../components/ui/carousel.js"
+import { getRoundInfo, useWindowSize } from '../api/helpers.js';
 import { Link } from "react-router";
 import { useEffect, useState } from 'react';
-import Number_input from './number_input';
+import Number_input from './number_input.js';
 
 type CarrousselProps = {
     contestants: Contestant[],

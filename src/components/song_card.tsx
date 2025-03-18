@@ -1,10 +1,10 @@
-import { Contestant } from './content';
-import { getPointsInfo } from '../api/helpers';
+import { Contestant } from './content.js';
+import { getPointsInfo } from '../api/helpers.js';
 import {
     HoverCard,
     HoverCardContent,
     HoverCardTrigger,
-} from "../components/ui/hover-card"
+} from "../components/ui/hover-card.js"
 
 
 type Song_cardProps = {

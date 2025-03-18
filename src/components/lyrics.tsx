@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { obtenerDatosConcursante } from '../api/api';
+import { obtenerDatosConcursante } from '../api/api.js';
 
 type LyricsProps = {
   year: number;

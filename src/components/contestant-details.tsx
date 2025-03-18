@@ -1,9 +1,9 @@
 import { useParams } from "react-router";
-import Selector from "./selector";
-import Lyrics from './lyrics';
-import Video from './video';
-import Title from './title';
-import Info from './info';
+import Selector from "./selector.js";
+import Lyrics from './lyrics.js';
+import Video from './video.js';
+import Title from './title.js';
+import Info from './info.js';
 import { useState } from "react";
 import logoEurovision from '../assets/logo_eurovision-removebg-preview.png';
 import { Link } from 'react-router';

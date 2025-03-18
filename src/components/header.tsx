@@ -1,6 +1,6 @@
 import logo_eurovision from '../assets/logo_eurovision.png';
 import './header.css';
-import { useWindowSize } from '../api/helpers';
+import { useWindowSize } from '../api/helpers.js';
 
 type HeaderProps = {
     year: number,

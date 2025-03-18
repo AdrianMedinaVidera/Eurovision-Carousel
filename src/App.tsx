@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import Header from './components/header'
-import Content from './components/content'
-import Footer from './components/footer'
-import { obtenerDatosEdicion, obtenerPaises } from './api/api'
+import Header from './components/header.js'
+import Content from './components/content.js'
+import Footer from './components/footer.js'
+import { obtenerDatosEdicion, obtenerPaises } from './api/api.js'
 import { useParams } from "react-router";
 
 function App() {
