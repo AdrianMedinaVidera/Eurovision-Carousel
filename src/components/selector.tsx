@@ -1,4 +1,4 @@
-import { obtenerAños, obtenerPaises } from '../api/api';
+import { obtenerAños, obtenerPaises } from '../api/api.js';
 import './selector.css'
 import { useEffect, useState } from 'react';
 import { useNavigate } from "react-router";
