@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import ContestantDetails from './components/contestant-details.js'
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
+  <BrowserRouter basename={import.meta.env.VITE_BASE_URL}>
     <Routes>
       <Route path="/" element={<App />}>
         <Route path="/:year" element={<App />} />
