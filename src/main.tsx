@@ -8,7 +8,6 @@ createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />}>
-        <Route path="/:year" element={<App />} />
       </Route>
       <Route
         path="/contestant/:year/:contestantId"
