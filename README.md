@@ -33,4 +33,4 @@ Hemos implementado las siguientes características:
 
 ---
 
-_Desarrollado como practica de thePower._
+_Desarrollado como práctica de thePower._
