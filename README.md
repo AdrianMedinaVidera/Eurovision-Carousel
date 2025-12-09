@@ -31,14 +31,6 @@ Hemos implementado las siguientes características:
 - **Iconos**: Lucide React
 - **Datos**: API REST externa (`eurovisionapi.runasp.net`)
 
-## Actualización Reciente (Fix API)
-
-Se ha realizado una corrección crítica en la capa de conexión con la API (`src/api/api.ts`).
-Debido a cambios en el proveedor de datos, se han actualizado los endpoints para apuntar a la nueva estructura de rutas:
-
-- Se ha migrado de `/api/contests/...` a `/api/senior/contests/...`.
-- Esto soluciona el problema de carga infinita ("Loading...") que ocurría al intentar obtener los datos de las ediciones y listas de años.
-
 ---
 
-_Desarrollado como practica de desarrollo web moderno._
+_Desarrollado como practica de thePower._
